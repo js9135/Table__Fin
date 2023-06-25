@@ -22,6 +22,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import { Button, Container } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function createData(name, DOCUMENT_TYPE, DOCUMENT_DATE, AMOUNT, BALANCE, PAYMENT_STATUS,) {
     return {
@@ -233,6 +234,7 @@ function EnhancedTableToolbar(props) {
             )}
 
             {numSelected > 0 ? (
+                <Link to={'/paymentlist'}>
                 <Button sx={{
                     backgroundColor: '#6E01B1',
                     minWidth: '120px',
@@ -243,21 +245,23 @@ function EnhancedTableToolbar(props) {
                         backgroundColor: '#6E01B1',
                         color: '#fff'
                     }
-                }} href='/paymentlist'>Pay Now</Button>
+                }} >Pay Now</Button>
+                </Link>
             ) : (
 
-                <Button
-                    sx={{
+                <Link to={'/paymentlist'}>
+                <Button sx={{
+                    backgroundColor: '#6E01B1',
+                    minWidth: '120px',
+                    textTransform: 'uppercase',
+                    color: '#fff',
+                    padding: '0.6rem 1rem',
+                    '&:hover': {
                         backgroundColor: '#6E01B1',
-                        minWidth: '120px',
-                        textTransform: 'uppercase',
-                        color: '#fff',
-                        padding: '0.6rem 1rem',
-                        '&:hover': {
-                            backgroundColor: '#6E01B1',
-                            color: '#fff'
-                        }
-                    }} href='/paymentlist'>Pay Now</Button>
+                        color: '#fff'
+                    }
+                }} >Pay Now</Button>
+                </Link>
             )}
         </Toolbar>
     );

@@ -71,7 +71,8 @@ const useStyles = makeStyles({
         position:'absolute',
         top:'38%',
         right:'1rem',
-        left:'1rem'
+        left:'1rem',
+        boxShadow:'0px 0px 20px -2px #0000006b'
     }
 })
 
@@ -131,7 +132,7 @@ const ModalForm = () => {
                 <Dialog
                     sx={{
                         backgroundColor: '#000000c2',
-                        position: 'relative',
+                      
                         '& .MuiPaper-root': {
                             backgroundColor: '#fff',
 
@@ -239,7 +240,7 @@ const ModalForm = () => {
                                     <Button onClick={() => setShow(prev => !prev)} fullWidth variant="contained" className={classes.submit___btn}>Submit</Button>
                                 </Box>
                                 {show && <Box className={classes.boxPopup}>
-                                    <Typography color={'#00c430'}>Payment Successfully Please check your email</Typography>
+                                    <Typography color={'#00c430'}>Successful</Typography>
                                 </Box>}
 
 

@@ -8,6 +8,7 @@ import gpay from '../../assets/images/gpay.svg'
 import ppay from '../../assets/images/ppay.svg'
 import cpay from '../../assets/images/cpay.svg'
 import ModalForm from "../../components/ModalForm";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     back__btn: {
@@ -193,9 +194,11 @@ const PaymentList = () => {
                         <Grid item lg={8} md={12} sm={12} xs={12}>
                             <Box className={classes.butn__wrap}>
                                 <Box>
-                                    <Button href="/" disableRipple className={classes.back__btn} variant="contained" startIcon={<Typography component={'img'} src={bkarrow} />}>
+                                    <Link to={'/'}>
+                                    <Button  disableRipple className={classes.back__btn} variant="contained" startIcon={<Typography component={'img'} src={bkarrow} />}>
                                         Back
                                     </Button>
+                                    </Link>
                                 </Box>
                                 <Box>
                                     <Typography sx={{ '@media(max-width : 600px)': { fontSize: '1.2rem' } }} variant="h4" color={'#000'}>Selected Payment Info:--</Typography>
